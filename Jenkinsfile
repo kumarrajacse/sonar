@@ -43,17 +43,6 @@ pipeline{
 		sh 'docker push kumarartech/tomcat:2.0'
 		}
 	    }
-	stage('Deployment in cluster'){
-steps('cluster'){
-withKubeConfig(credentialsId: 'kubernetes') {
-sh 'kubectl delete -f Deployment.yml '
- sh 'kubectl delete -f Service.yml'
-sh 'docker image rmi kumarartech/tomcat:2.0'
-sh 'kubectl  apply -f Deployment.yml '
-sh 'kubectl  apply -f Service.yml'
 	
-}
-}
-}	        
     }
 }
