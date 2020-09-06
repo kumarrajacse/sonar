@@ -3,8 +3,7 @@ pipeline{
     stages{
         stage('checkout'){
             steps{
-               git 'https://github.com/kumarrajacse/dockerimage.git'
-            }
+               git 'https://github.com/kumarrajacse/sonar.git
         }
         stage('Build'){
             steps{
