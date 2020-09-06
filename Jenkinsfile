@@ -5,6 +5,9 @@ pipeline{
             steps{
                git 'https://github.com/kumarrajacse/sonar.git'
         }
+		
+		}
+		
         stage('Build'){
             steps{
                sh 'mvn clean package'
@@ -44,6 +47,5 @@ pipeline{
 	    }
 	
     }
-}
-}
+
 
